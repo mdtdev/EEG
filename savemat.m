@@ -16,7 +16,7 @@ ds = Dat.ds;
 % freqz(Blow,Alow,ds/2,ds);
 % cd(Dir.anadir);cd diagnostics;
 % eval(sprintf('saveas(gcf,''Lowpass.jpg'')'));
-% 
+%
 % % Design highpass filter
 % [N,Wn]=buttord(.000001/(ds/2),10/(ds/2),1,30);
 % [Bhigh,Ahigh]=butter(N,Wn,'high');
@@ -24,7 +24,7 @@ ds = Dat.ds;
 % cd(Dir.anadir);cd diagnostics;
 % eval(sprintf('saveas(gcf,''Highpass.jpg'')'));
 % close all;
-% 
+%
 % %% detrend and filter
 % for gc = 1:numchan;
 % data(gc,:) = detrend(data(gc,:));

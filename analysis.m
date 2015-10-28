@@ -1,4 +1,4 @@
-function analysis(Dir,Dat);% 
+function analysis(Dir,Dat);%
 
 close all;
 
@@ -25,7 +25,7 @@ close all
 % Hs=spectrum.welch;
 % Hs.SegmentLength=128;% set to sampling rate
 % figure,psd(Hs,data(thechan(k),:),'Fs',ds);
-%% Freq domain 
+%% Freq domain
 % FFT code
 L=length(tempe);
 NFFT = 2^nextpow2(L); % Next power of 2 from length of y
@@ -33,7 +33,7 @@ Y = fft(tempe,NFFT)/L;
 f = ds/2*linspace(0,1,NFFT/2+1);
 
 % Plot single-sided amplitude spectrum.
-figure,plot(f,2*abs(Y(1:NFFT/2+1))) 
+figure,plot(f,2*abs(Y(1:NFFT/2+1)))
 title('Single-Sided Amplitude Spectrum using FFT')
 xlabel('Frequency (Hz)')
 ylabel('|Y(f)|')
@@ -42,10 +42,10 @@ ylabel('|Y(f)|')
 
 
 % Spectrogram plot
-%[S,Freq,T,P]=spectrogram(x,window,noverlap,F,fs);% S-STFT;Freq=rounded freq,T=vector of times at which 
+%[S,Freq,T,P]=spectrogram(x,window,noverlap,F,fs);% S-STFT;Freq=rounded freq,T=vector of times at which
 % specgram is % %computed,P=power spectral intensity of each segment;noverlap is less than window size
 [S,Freq,T,P] = spectrogram(tempe,ds,32,ds,ds); figure
-surf(T,Freq,10*log10(P),'edgecolor','none'); axis tight; 
+surf(T,Freq,10*log10(P),'edgecolor','none'); axis tight;
 view(0,90);title('Spectrogram showing Entire spectrum for whole session');colorbar
 xlabel('Time (Seconds)'); ylabel('Hz');
 %eval(sprintf('Spectrogram_channel%0.0f.png -m2.5 -painters',k))
@@ -54,6 +54,3 @@ xlabel('Time (Seconds)'); ylabel('Hz');
 close all
 
  end
-
- 
- 
