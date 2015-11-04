@@ -18,7 +18,6 @@ function [] = ge_importScript(filenameRoot)
   fprintf(strcat('GE\tOutput filename:\t',  filenameRoot, '\n\n'));
 
   % Do the actual work...
-
   full_EEG = pop_biosig(fullEDFname);
   fprintf(strcat('\n\tGE\t', fullEDFname, '\t imported with BIOSIG.\n\n'));
 
