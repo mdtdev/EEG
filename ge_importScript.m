@@ -1,3 +1,5 @@
+% ge_importScript(EDF_filename)
+%
 % Import Script for EDF files from EPOC/EPOC+
 %
 % Give this function the full name of the EDF file. It will delete the
@@ -6,7 +8,7 @@
 %
 % MDT 2015.11.04 (Revised)
 
-function [] = ge_importScript(filenameRoot)
+function ge_importScript(filenameRoot)
 
   % Filename string manipulations
   fullEDFname  = filenameRoot;
