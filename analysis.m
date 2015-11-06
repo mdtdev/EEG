@@ -1,9 +1,11 @@
-function analysis(Dir,Dat);%
+function analysis(Dir,Dat)
+%
 
 close all;
 
 %% load the subject matlab file
-cd(Dir.anadir);eval(sprintf('fl=dir(''%s_1.mat'');',Dat.file(1:(end-4))));
+cd(Dir.anadir);
+eval(sprintf('fl=dir(''%s_1.mat'');',Dat.file(1:(end-4))));
 load(fl(1).name);
 
 ds=Dat.ds;
@@ -54,3 +56,4 @@ xlabel('Time (Seconds)'); ylabel('Hz');
 close all
 
  end
+end
