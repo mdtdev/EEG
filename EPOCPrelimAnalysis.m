@@ -12,7 +12,7 @@ close all;    % Placed last to close eeglab interactive window
 
 % Set Variables Here, then run script:
 
-datasetFileName = '1004_Intake_eegOnly.set';
+datasetFileName = '1006-session2_eegOnly.set';
 datasetFileRoot = datasetFileName(1:(end-4));
 
 % This script does ONE analysis run on ONE data set, hopefully it can be
@@ -36,7 +36,12 @@ for ii = 1:nc
 
   % Setup for a channel
   channelName = cNames(ii,:);
-  figureFile  = [datasetFileRoot '_prelimfigure' '_' channelName '.fig'];
+  if ii < 10
+      figureFile  = [datasetFileRoot '_prelimfigure' '_0' int2str(ii) '_' channelName '.fig'];
+  else
+      figureFile  = [datasetFileRoot '_prelimfigure' '_' int2str(ii) '_' channelName '.fig'];
+  end
+  
   fprintf(['\tChannel: ' channelName ' to file: ' figureFile '\n']);
 
   % Overall figure
