@@ -6,7 +6,7 @@
 
 % Reset Environment
 
-clear all;
+%clear all;
 eeglab;       % eeglab must be installed and working before use
 close all;    % Placed last to close eeglab interactive window
 
