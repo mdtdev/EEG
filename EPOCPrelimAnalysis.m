@@ -12,7 +12,8 @@ close all;    % Placed last to close eeglab interactive window
 
 % Set Variables Here, then run script:
 
-datasetFileName = '1001-session4_eegOnly.set';
+%datasetFileName = '1001-session4_eegOnly.set';   % Blocked out for repeated usage
+
 datasetFileRoot = datasetFileName(1:(end-4));
 
 % This script does ONE analysis run on ONE data set, hopefully it can be
