@@ -34,7 +34,7 @@ function bounds = ge_screeningAnalysis(rootEDFFile)
     % Make rawEEG file (check if exists first)
     
     if exist([pwd filesep rawEEGFile], 'file')
-        warning('The raw EEG data already exists and this will be used.');
+        error('The raw EEG data already exists! Delete it to proceed.');
     else
         full_EEG = pop_biosig(rootEDFFile);
         EEG_Only = ge_extractExperimentDataset(full_EEG);
@@ -55,9 +55,7 @@ function bounds = ge_screeningAnalysis(rootEDFFile)
           figureFile  = [figRootName '_prelimfigure' '_' int2str(ii) '_' channelName '.fig'];
       end
 
-      fprintf(['\tChannel: ' channelName ' to file: ' figureFile '\n']);
-
-      % Overall figure
+      % Make Overall Figure
       figure;
 
       % Time Domain Plot
@@ -99,12 +97,5 @@ function bounds = ge_screeningAnalysis(rootEDFFile)
       % Save the figure
       savefig(gcf, [pwd filesep screenDir filesep figureFile]);
       close all;
-      
     end
-    
-    % Clean up
-    
-    %Clear all
-    %Close all
-
 end
