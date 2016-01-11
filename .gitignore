@@ -8,3 +8,4 @@
 *.m~      # *.m~ UNIX Style Autosaves
 *.mex*    # Binaries
 slprj/    # Simulink Directories
+screenUpdate.asv
