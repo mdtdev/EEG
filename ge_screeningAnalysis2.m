@@ -32,15 +32,17 @@ function bounds = ge_screeningAnalysis(rootEDFFile)
         mkdir(screenDir);
     end
 
-    % Make rawEEG file (check if exists first)
+    % Check for rawEEG data file and warn!
     
     if exist([pwd filesep rawEEGFile], 'file')
-        error('The raw EEG data already exists! Delete it to proceed.');
-    else
-        full_EEG = pop_biosig(rootEDFFile);
-        EEG_Only = ge_extractExperimentDataset(full_EEG);
-        pop_saveset(EEG_Only, 'filename', rawEEGFile);
+        warning(['The rawEEG data file:  ' rawEEGFile '  exists and will be overwritten.']);
     end
+    
+    % Make rawEEG file 
+    
+    full_EEG = pop_biosig(rootEDFFile);
+    EEG_Only = ge_extractExperimentDataset(full_EEG);
+    pop_saveset(EEG_Only, 'filename', rawEEGFile);
     
     % Make the plots and place them in the directory
     

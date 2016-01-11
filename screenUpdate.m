@@ -26,7 +26,7 @@ fileList           = ls('*.edf');
 
 disp('screenUpdate.m Running');
 disp(['Current directory:  ' pwd]);
-disp(['Number of files:  ' int2str(numFiles)]);
+disp(['Number of EDF files:  ' int2str(numFiles)]);
 
 for ii = 1:numFiles
     curFile = fileList(ii,:);
