@@ -1,4 +1,4 @@
-function quickView(dataset)
+function quickview(dataset)
     % quickView(dataset)
     %
     % Displays a scroll view of the data set named in "dataset". Launches,
@@ -13,5 +13,5 @@ function quickView(dataset)
 
     EEG = pop_loadset('filename', dataset);
     EEG = pop_rmbase(EEG,[]);
-    eegplot(EEG.data, 'winlength', 30, 'plottitle', dataset);
+    eegplot(EEG.data, 'winlength', 30, 'plottitle', dataset, 'xgrid', 'on', 'ygrid', 'on');
 end
