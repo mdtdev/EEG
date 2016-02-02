@@ -21,3 +21,4 @@ function eventList = ge_makeEventList(EEGVAR, markerChannel)
     count = 1:n;
     
     eventList = horzcat(count', nonzeroSamplePoints', nonzeroSampleValues');
+end
