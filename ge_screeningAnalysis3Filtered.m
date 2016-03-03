@@ -1,16 +1,19 @@
 
-function ge_screeningAnalysis2(rootEDFFile)
-    % function ge_screeningAnalysis2(rootEDFFile)
+function ge_screeningAnalysis3Filtered(rootEDFFile)
+    % function ge_screeningAnalysis3Filtered(rootEDFFile)
     % 
     % Transforms EDF files into sliced raw EEG, then executes a Navin-style
     % analysis and leaves the resulting pictures in a newly created folder
     % under the execution directory.
     %
     % MDT
-    % 2016.03.03
-    % Version 0.3
+    % 2016.01.09
+    % Version 0.2
     
     % Setup
+    
+    lowerBound = 1;     % Bandpass filter bounds in Hz
+    upperBound = 41;
     
     %eeglab;     % Use eeglab functions to do conversion
     %close all;  % Close eeglab window
@@ -42,6 +45,7 @@ function ge_screeningAnalysis2(rootEDFFile)
     
     full_EEG = pop_biosig(rootEDFFile);
     EEG_Only = ge_extractExperimentDataset(full_EEG);
+    EEG_Only = pop_eegfilt(EEG_Only, lowerBound, upperBound, [], [0], 0, 0, 'fir1', 0);
     pop_saveset(EEG_Only, 'filename', rawEEGFile);
     
     % Make the plots and place them in the directory
