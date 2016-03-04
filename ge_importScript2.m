@@ -12,8 +12,8 @@ function ge_importScript2(filenameRoot)
 
     % Setup:
     
-    lowerBound = 1;     % Bandpass filter bounds in Hz
-    upperBound = 41;
+    lowerBound = 2;     % Bandpass filter bounds in Hz
+    upperBound = 40;
 
     % Filename string manipulations - Built for MEDITATION Study Data
     %    NB: This should work for any data saved from Emotiv Testbench
