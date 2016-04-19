@@ -28,7 +28,7 @@ function ge_importTAP(filenameRoot)
     filenameRoot = strcat(filenameRoot,'_filtEEG.set');
     
     fprintf(strcat('\nGE\tInput filename:\t\t', fullEDFname,  '\n'));
-    fprintf(strcat('GE\tOutput filename:\t',  filenameRoot, '\n\n'));
+    %fprintf(strcat('GE\tOutput filename:\t',  filenameRoot, '\n\n'));
     
 
 end
