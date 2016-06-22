@@ -13,7 +13,7 @@ function AIS = ge_parrottImport(filename)
     elseif regexp(filename,'edf$')
         EEG2 = pop_biosig(filename);
     else
-        error('ge_handContraction: File type unknown');
+        error('ge_parrottImport: File type unknown');
     end
     
     %EEG2     = pop_biosig(filename);
