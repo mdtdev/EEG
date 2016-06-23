@@ -14,11 +14,13 @@ function eventList = ge_makeEventList(EEGVAR, markerChannel)
         markerChannel = 20;     % Default EPOC(+) marker channel
     end
     
-    nonzeroSamplePoints = find(EEGVAR.data(markerChannel,:));
-    nonzeroSampleValues = EEGVAR.data(markerChannel, nonzeroSamplePoints);
+    nonzeroSamplePoints  = find(EEGVAR.data(markerChannel,:));
+    nonzeroSampleSeconds = nonzeroSamplePoints./128;
+    nonzeroSampleValues  = EEGVAR.data(markerChannel, nonzeroSamplePoints);
     
     n = length(nonzeroSamplePoints);
     count = 1:n;
     
-    eventList = horzcat(count', nonzeroSamplePoints', nonzeroSampleValues');
+    eventList = table(count', nonzeroSamplePoints', nonzeroSampleSeconds', nonzeroSampleValues', ...
+                        'VariableNames',{'Number' 'Sample' 'Time' 'Marker'});
 end

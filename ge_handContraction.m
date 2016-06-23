@@ -16,7 +16,7 @@ function AIS = ge_handContraction(filename)
     end
     
     EEG_only = pop_select(EEG2, 'channel', eegChannels);
-    EEG_only = pop_reref(EEG_only, []);    % avg reference!
+    %EEG_only = pop_reref(EEG_only, [6 9], 'keepref', 'on');    % avg reference!
     EEG_only = pop_eegfilt(EEG_only, lowerBound, upperBound, [], [0], 0, 0, 'fir1', 0);
     
     for m = 3:5
