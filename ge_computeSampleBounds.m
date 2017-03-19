@@ -14,5 +14,5 @@ function bounds = ge_computeSampleBounds(EEGVAR, beepValue, markerChannel)
         markerChannel = 20;
     end
     
-    nonzeroSamplePoints = find(EEG.data(markerChannel,:));
+    nonzeroSamplePoints = find(EEGVAR.data(markerChannel,:));
     nonzeroSampleValues = EEGVAR.data(markerChannel, nonzeroSamplePoints);
